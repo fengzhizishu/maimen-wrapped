@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>我的麦门画像 · maimen-wrapped</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;background:#1A0A0C}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;color:#FFF8EC}
+.deck{height:100vh;height:100dvh;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+.deck::-webkit-scrollbar{display:none}
+.card{position:relative;height:100vh;height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;padding:52px 30px 34px;overflow:hidden}
+.card::before,.card::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.card::before{width:300px;height:300px;top:-110px;right:-110px;background:rgba(255,255,255,.09)}
+.card::after{width:220px;height:220px;bottom:-80px;left:-80px;background:rgba(255,255,255,.06)}
+.eyebrow{font-size:13px;letter-spacing:3px;opacity:.72;position:relative;z-index:2}
+.headline{font-size:44px;font-weight:600;line-height:1.22;margin-top:14px;position:relative;z-index:2;letter-spacing:-.5px}
+.subhead{font-size:17px;line-height:1.65;opacity:.88;margin-top:14px;position:relative;z-index:2}
+.spacer{flex:1}
+.footer{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:18px}
+.caption{font-size:13px;opacity:.7;line-height:1.5;max-width:64%}
+.dots{display:flex;gap:6px;align-items:center;padding-bottom:4px}
+.dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.34);transition:width .3s}
+.dot.on{width:18px;border-radius:3px;background:#FFF8EC}
+.panel{position:relative;z-index:2;background:rgba(255,248,236,.14);border-radius:16px;padding:16px 18px;backdrop-filter:blur(2px)}
+.grid2{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid3{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:rgba(255,248,236,.14);border-radius:14px;padding:14px 12px;text-align:center}
+.stat .v{font-size:26px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.15}
+.stat .k{font-size:12px;opacity:.72;margin-top:4px;letter-spacing:.5px}
+.big{font-size:132px;font-weight:700;line-height:.92;font-variant-numeric:tabular-nums;letter-spacing:-4px;position:relative;z-index:2}
+.big .unit{font-size:30px;font-weight:500;margin-left:8px;letter-spacing:0}
+.bar{margin-top:0}
+.bar-row{margin-bottom:13px;position:relative;z-index:2}
+.bar-top{display:flex;justify-content:space-between;font-size:14px;margin-bottom:5px}
+.bar-top .n{opacity:.94}
+.bar-top .c{font-weight:600;font-variant-numeric:tabular-nums}
+.track{height:9px;border-radius:5px;background:rgba(255,255,255,.2);overflow:hidden}
+.fill{height:100%;border-radius:5px;background:#FFF8EC;width:0;transition:width 1.1s cubic-bezier(.22,1,.36,1)}
+.fill.alt{background:#FFD9A0}
+.chart{position:relative;z-index:2;display:flex;align-items:flex-end;gap:5px;height:150px;margin-top:8px}
+.col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:6px}
+.col .cb{width:100%;border-radius:5px 5px 0 0;background:rgba(255,248,236,.38);height:0;transition:height 1s cubic-bezier(.22,1,.36,1)}
+.col .cb.hot{background:#FFF8EC}
+.col .cl{font-size:10px;opacity:.66}
+.badge{margin:0 auto;width:158px;height:158px;border-radius:50%;border:3px solid #FFF8EC;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;background:rgba(255,248,236,.1);position:relative;z-index:2}
+.badge span{font-size:25px;font-weight:600;line-height:1.3}
+.repo{position:relative;z-index:2;text-align:center;font-size:13px;opacity:.8;letter-spacing:.4px;margin-top:16px}
+.repo b{font-weight:600;opacity:.96}
+.start{position:relative;z-index:2;margin-top:26px;display:inline-flex;align-items:center;gap:9px;background:#FFF8EC;color:#B00E22;font-size:17px;font-weight:600;padding:15px 30px;border-radius:99px;align-self:flex-start;box-shadow:0 6px 22px rgba(0,0,0,.2)}
+.hint{position:relative;z-index:2;font-size:13px;opacity:.68;margin-top:12px}
+.pill{display:inline-block;background:rgba(255,248,236,.2);border-radius:99px;padding:7px 14px;font-size:13px;margin:5px 6px 0 0;position:relative;z-index:2}
+.mute{position:fixed;top:18px;right:18px;z-index:50;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.3);color:#FFF8EC;font-size:17px;display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none;transition:background .2s}
+.mute:hover{background:rgba(0,0,0,.48)}
+.anim{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1)}
+.card.live .anim{opacity:1;transform:none}
+.warn{position:relative;z-index:2;font-size:12px;opacity:.6;margin-top:10px;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="mute" id="mute" title="静音 / 取消静音">♪</div>
+<div class="deck" id="deck">
+__CARDS__
+</div>
+<script>
+(function(){
+var listCards=[].slice.call(document.querySelectorAll('.card'));
+var elDots=document.querySelectorAll('.dot');
+
+function paint(i){
+  listCards.forEach(function(el,idx){ el.classList.toggle('live', idx<=i); });
+  elDots.forEach(function(el,idx){ el.classList.toggle('on', idx===i); });
+  var elCard=listCards[i];
+  elCard.querySelectorAll('.fill').forEach(function(el){ el.style.width=(el.dataset.w||0)+'%'; });
+  elCard.querySelectorAll('.cb').forEach(function(el){ el.style.height=(el.dataset.h||0)+'%'; });
+  elCard.querySelectorAll('[data-count]').forEach(function(el){ countUp(el); });
+}
+
+function countUp(el){
+  if(el.dataset.done==='1') return;
+  el.dataset.done='1';
+  var dTarget=parseFloat(el.dataset.count)||0;
+  var nDec=parseInt(el.dataset.dec||'0',10);
+  var nStart=performance.now(), nDur=900;
+  function step(now){
+    var dP=Math.min(1,(now-nStart)/nDur);
+    var dEase=1-Math.pow(1-dP,3);
+    var dVal=dTarget*dEase;
+    el.textContent=nDec>0?dVal.toFixed(nDec):Math.round(dVal).toLocaleString();
+    if(dP<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+var nCur=0;
+var elDeck=document.getElementById('deck');
+elDeck.addEventListener('scroll',function(){
+  var nIdx=Math.round(elDeck.scrollTop/elDeck.clientHeight);
+  if(nIdx!==nCur){ nCur=nIdx; paint(nCur); }
+},{passive:true});
+window.addEventListener('resize',function(){
+  nCur=Math.round(elDeck.scrollTop/elDeck.clientHeight); paint(nCur);
+});
+
+/* ---------- 原创 BGM：Web Audio 现场合成，零音频文件 ---------- */
+var objAudio=null, bPlaying=false, nLoopTimer=null, objGain=null;
+
+function ensureCtx(){
+  if(objAudio) return objAudio;
+  var Ctx=window.AudioContext||window.webkitAudioContext;
+  if(!Ctx) return null;
+  objAudio=new Ctx();
+  objGain=objAudio.createGain();
+  objGain.gain.value=0;
+  objGain.connect(objAudio.destination);
+  return objAudio;
+}
+
+function playNote(dTime,dFreq,dDur,dVol){
+  var osc=objAudio.createOscillator();
+  var env=objAudio.createGain();
+  osc.type='triangle';
+  osc.frequency.setValueAtTime(dFreq,dTime);
+  env.gain.setValueAtTime(0,dTime);
+  env.gain.linearRampToValueAtTime(dVol,dTime+0.012);
+  env.gain.exponentialRampToValueAtTime(0.0001,dTime+dDur);
+  osc.connect(env); env.connect(objGain);
+  osc.start(dTime); osc.stop(dTime+dDur+0.02);
+}
+
+function playBar(){
+  if(!bPlaying||!objAudio) return;
+  var dNow=objAudio.currentTime+0.04;
+  var dBeat=0.42;
+  /* 原创欢快动机：C 大调五声音阶，非任何现有曲目 */
+  var listMel=[523.25,659.25,783.99,659.25,587.33,783.99,880.00,783.99];
+  var listBass=[130.81,130.81,146.83,146.83];
+  for(var i=0;i<listMel.length;i++){
+    playNote(dNow+i*dBeat,listMel[i],dBeat*0.82,0.10);
+  }
+  for(var j=0;j<listBass.length;j++){
+    playNote(dNow+j*dBeat*2,listBass[j],dBeat*1.6,0.075);
+  }
+  nLoopTimer=setTimeout(playBar,listMel.length*dBeat*1000);
+}
+
+function startBgm(){
+  var ctx=ensureCtx();
+  if(!ctx) return;
+  if(ctx.state==='suspended') ctx.resume();
+  if(bPlaying) return;
+  bPlaying=true;
+  document.getElementById('mute').textContent='♪';
+  objGain.gain.cancelScheduledValues(ctx.currentTime);
+  objGain.gain.setValueAtTime(objGain.gain.value,ctx.currentTime);
+  objGain.gain.linearRampToValueAtTime(0.5,ctx.currentTime+1.2);
+  playBar();
+}
+
+function stopBgm(){
+  if(!objAudio) return;
+  bPlaying=false;
+  clearTimeout(nLoopTimer);
+  objGain.gain.cancelScheduledValues(objAudio.currentTime);
+  objGain.gain.setValueAtTime(objGain.gain.value,objAudio.currentTime);
+  objGain.gain.linearRampToValueAtTime(0,objAudio.currentTime+0.4);
+}
+
+document.getElementById('mute').addEventListener('click',function(ev){
+  ev.stopPropagation();
+  if(bPlaying){ stopBgm(); this.textContent='✕'; }
+  else { startBgm(); }
+});
+
+var elStart=document.getElementById('startBtn');
+if(elStart){
+  elStart.addEventListener('click',function(){
+    startBgm();
+    var elNext=listCards[1];
+    if(elNext) elNext.scrollIntoView({behavior:'smooth'});
+  });
+}
+
+if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  document.querySelectorAll('.anim').forEach(function(el){el.style.opacity=1;el.style.transform='none';});
+}
+
+paint(0);
+})();
+</script>
+</body>
+</html>

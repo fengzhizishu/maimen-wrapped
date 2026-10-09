@@ -1,0 +1,18 @@
+# 统一换行符：仓库内一律存储 LF，避免跨平台协作问题
+* text=auto eol=lf
+
+# 显式声明文本文件类型
+*.py    text eol=lf
+*.md    text eol=lf
+*.json  text eol=lf
+*.html  text eol=lf
+*.txt   text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+
+# 二进制文件不做转换
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary

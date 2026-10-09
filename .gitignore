@@ -1,0 +1,24 @@
+# ---- 机密与本地数据（切勿提交）----
+.env
+.env.local
+
+# ---- 运行时产物 ----
+data/
+output/
+nutrition_cache.json
+*.log
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

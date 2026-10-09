@@ -1,0 +1,2337 @@
+{
+  "nowTime": {
+    "time": "2026-10-09 18:30:00",
+    "weekday": "周五"
+  },
+  "orderList": [
+    {
+      "orderId": "DEMO00079",
+      "createTime": "2026-01-08 19:06:46",
+      "totalAmount": 24.23,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00035",
+      "createTime": "2026-01-11 11:33:35",
+      "totalAmount": 50.45,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "奥利奥麦旋风",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00067",
+      "createTime": "2026-01-17 23:29:53",
+      "totalAmount": 57.96,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        },
+        {
+          "name": "玉米杯",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "猪柳蛋麦满分",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00005",
+      "createTime": "2026-01-20 19:05:18",
+      "totalAmount": 55.43,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "奥利奥麦旋风",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00048",
+      "createTime": "2026-01-21 13:40:32",
+      "totalAmount": 47.41,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00120",
+      "createTime": "2026-01-22 23:42:37",
+      "totalAmount": 62.79,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00104",
+      "createTime": "2026-01-24 21:50:23",
+      "totalAmount": 14.59,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00018",
+      "createTime": "2026-01-27 17:15:25",
+      "totalAmount": 79.73,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡翅",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00064",
+      "createTime": "2026-01-28 22:27:04",
+      "totalAmount": 58.05,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00124",
+      "createTime": "2026-01-31 12:47:28",
+      "totalAmount": 24.73,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "猪柳蛋麦满分",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00078",
+      "createTime": "2026-02-05 11:44:31",
+      "totalAmount": 14.44,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "麦香鱼",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00053",
+      "createTime": "2026-02-07 18:00:25",
+      "totalAmount": 27.61,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00026",
+      "createTime": "2026-02-07 23:32:34",
+      "totalAmount": 15.08,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00110",
+      "createTime": "2026-02-10 20:55:48",
+      "totalAmount": 17.71,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00072",
+      "createTime": "2026-02-10 21:27:36",
+      "totalAmount": 55.39,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00127",
+      "createTime": "2026-02-12 17:05:37",
+      "totalAmount": 20.54,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店2店)",
+      "items": [
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00066",
+      "createTime": "2026-02-15 21:45:17",
+      "totalAmount": 45.55,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00050",
+      "createTime": "2026-02-16 14:25:07",
+      "totalAmount": 40.76,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "巨无霸",
+          "quantity": 3
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00061",
+      "createTime": "2026-02-16 19:04:39",
+      "totalAmount": 46.29,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店2店)",
+      "items": [
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00075",
+      "createTime": "2026-02-17 11:00:50",
+      "totalAmount": 30.07,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        },
+        {
+          "name": "奥利奥麦旋风",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00069",
+      "createTime": "2026-02-17 14:56:29",
+      "totalAmount": 68.79,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        },
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00122",
+      "createTime": "2026-02-19 21:29:33",
+      "totalAmount": 16.78,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "麦辣鸡翅",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00107",
+      "createTime": "2026-02-21 20:05:42",
+      "totalAmount": 30.67,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00126",
+      "createTime": "2026-02-22 12:41:35",
+      "totalAmount": 39.72,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "麦辣鸡翅",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00049",
+      "createTime": "2026-02-25 18:52:08",
+      "totalAmount": 60.07,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "麦辣鸡翅",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00036",
+      "createTime": "2026-02-25 19:51:17",
+      "totalAmount": 65.15,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        },
+        {
+          "name": "奥利奥麦旋风",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00028",
+      "createTime": "2026-02-27 22:09:12",
+      "totalAmount": 48.24,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00093",
+      "createTime": "2026-02-27 22:31:53",
+      "totalAmount": 31.16,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店2店)",
+      "items": [
+        {
+          "name": "麦香鱼",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00056",
+      "createTime": "2026-02-28 15:34:45",
+      "totalAmount": 96.68,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店2店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00055",
+      "createTime": "2026-03-01 17:51:25",
+      "totalAmount": 49.13,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        },
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00087",
+      "createTime": "2026-03-02 23:22:40",
+      "totalAmount": 15.5,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "玉米杯",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00017",
+      "createTime": "2026-03-10 09:38:38",
+      "totalAmount": 65.96,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        },
+        {
+          "name": "拿铁",
+          "quantity": 1
+        },
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00060",
+      "createTime": "2026-03-13 11:59:35",
+      "totalAmount": 29.03,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00074",
+      "createTime": "2026-03-13 18:11:26",
+      "totalAmount": 68.66,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00094",
+      "createTime": "2026-03-13 21:57:30",
+      "totalAmount": 69.23,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡翅",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00020",
+      "createTime": "2026-03-18 17:27:24",
+      "totalAmount": 29.86,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店2店)",
+      "items": [
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        },
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00099",
+      "createTime": "2026-03-18 22:07:39",
+      "totalAmount": 82.45,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 2
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "拿铁",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00032",
+      "createTime": "2026-03-22 19:58:41",
+      "totalAmount": 28.21,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00102",
+      "createTime": "2026-03-22 22:46:49",
+      "totalAmount": 71.62,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "巨无霸",
+          "quantity": 2
+        },
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        },
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00091",
+      "createTime": "2026-03-26 17:04:26",
+      "totalAmount": 50.29,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00115",
+      "createTime": "2026-03-27 22:51:49",
+      "totalAmount": 61.26,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 2
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00016",
+      "createTime": "2026-03-30 13:03:25",
+      "totalAmount": 27.88,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00125",
+      "createTime": "2026-04-01 13:13:41",
+      "totalAmount": 13.91,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00113",
+      "createTime": "2026-04-05 20:48:24",
+      "totalAmount": 55.84,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00085",
+      "createTime": "2026-04-09 20:28:16",
+      "totalAmount": 48.26,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00033",
+      "createTime": "2026-04-09 21:32:02",
+      "totalAmount": 52.85,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        },
+        {
+          "name": "奥利奥麦旋风",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00123",
+      "createTime": "2026-04-09 23:43:50",
+      "totalAmount": 29.51,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "拿铁",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00068",
+      "createTime": "2026-04-10 21:37:18",
+      "totalAmount": 36.7,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00025",
+      "createTime": "2026-04-16 22:58:13",
+      "totalAmount": 21.59,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00001",
+      "createTime": "2026-04-17 14:42:41",
+      "totalAmount": 16.43,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "麦辣鸡翅",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00096",
+      "createTime": "2026-04-18 16:33:59",
+      "totalAmount": 31.18,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡翅",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00038",
+      "createTime": "2026-04-18 23:25:26",
+      "totalAmount": 28.24,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "麦辣鸡翅",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00007",
+      "createTime": "2026-04-20 16:35:14",
+      "totalAmount": 45.26,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00040",
+      "createTime": "2026-04-22 19:42:34",
+      "totalAmount": 34.7,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00111",
+      "createTime": "2026-04-22 23:29:11",
+      "totalAmount": 37.18,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 2
+        },
+        {
+          "name": "麦辣鸡翅",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00014",
+      "createTime": "2026-04-26 12:18:52",
+      "totalAmount": 31.21,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00044",
+      "createTime": "2026-04-27 12:03:13",
+      "totalAmount": 47.84,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "猪柳蛋麦满分",
+          "quantity": 2
+        },
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00083",
+      "createTime": "2026-04-28 17:13:35",
+      "totalAmount": 87.75,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 2
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "玉米杯",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00086",
+      "createTime": "2026-04-30 07:57:47",
+      "totalAmount": 55.84,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "奥利奥麦旋风",
+          "quantity": 1
+        },
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        },
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00013",
+      "createTime": "2026-04-30 21:00:53",
+      "totalAmount": 27.19,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00081",
+      "createTime": "2026-05-01 21:03:59",
+      "totalAmount": 78.54,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "猪柳蛋麦满分",
+          "quantity": 1
+        },
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        },
+        {
+          "name": "拿铁",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00024",
+      "createTime": "2026-05-02 20:45:28",
+      "totalAmount": 55.93,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "薯条(中)",
+          "quantity": 2
+        },
+        {
+          "name": "猪柳蛋麦满分",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00046",
+      "createTime": "2026-05-13 23:45:02",
+      "totalAmount": 15.84,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "猪柳蛋麦满分",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00070",
+      "createTime": "2026-05-14 06:17:30",
+      "totalAmount": 62.69,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "拿铁",
+          "quantity": 1
+        },
+        {
+          "name": "巨无霸",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00077",
+      "createTime": "2026-05-15 18:08:27",
+      "totalAmount": 54.82,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        },
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00054",
+      "createTime": "2026-05-16 17:35:06",
+      "totalAmount": 43.17,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "猪柳蛋麦满分",
+          "quantity": 1
+        },
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00019",
+      "createTime": "2026-05-16 23:52:22",
+      "totalAmount": 90.58,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店2店)",
+      "items": [
+        {
+          "name": "奥利奥麦旋风",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00002",
+      "createTime": "2026-05-17 16:24:24",
+      "totalAmount": 46.26,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        },
+        {
+          "name": "拿铁",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00090",
+      "createTime": "2026-05-18 21:12:46",
+      "totalAmount": 22.64,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "麦辣鸡翅",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00097",
+      "createTime": "2026-05-24 20:47:50",
+      "totalAmount": 69.08,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        },
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "香芋派",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00098",
+      "createTime": "2026-05-26 11:59:21",
+      "totalAmount": 41.19,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 2
+        },
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00095",
+      "createTime": "2026-05-26 14:41:03",
+      "totalAmount": 76.74,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 2
+        },
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        },
+        {
+          "name": "猪柳蛋麦满分",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00021",
+      "createTime": "2026-05-31 13:21:43",
+      "totalAmount": 13.16,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00047",
+      "createTime": "2026-05-31 22:32:04",
+      "totalAmount": 17.1,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "薯条(中)",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00063",
+      "createTime": "2026-06-01 19:20:44",
+      "totalAmount": 60.55,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00103",
+      "createTime": "2026-06-03 17:32:06",
+      "totalAmount": 21.29,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00034",
+      "createTime": "2026-06-07 17:32:45",
+      "totalAmount": 58.3,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        },
+        {
+          "name": "猪柳蛋麦满分",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00043",
+      "createTime": "2026-06-08 18:55:00",
+      "totalAmount": 45.78,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 2
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00029",
+      "createTime": "2026-06-13 22:26:10",
+      "totalAmount": 26.97,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00037",
+      "createTime": "2026-06-15 08:22:42",
+      "totalAmount": 12.12,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店2店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00062",
+      "createTime": "2026-06-17 17:54:24",
+      "totalAmount": 25.95,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "玉米杯",
+          "quantity": 1
+        },
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00101",
+      "createTime": "2026-06-17 22:07:49",
+      "totalAmount": 72.9,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "香芋派",
+          "quantity": 1
+        },
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00119",
+      "createTime": "2026-06-17 23:46:16",
+      "totalAmount": 28.73,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 2
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00105",
+      "createTime": "2026-06-18 12:08:35",
+      "totalAmount": 27.67,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "猪柳蛋麦满分",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00088",
+      "createTime": "2026-06-18 23:02:36",
+      "totalAmount": 31.97,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00051",
+      "createTime": "2026-06-24 21:38:19",
+      "totalAmount": 40.59,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 2
+        },
+        {
+          "name": "香芋派",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00116",
+      "createTime": "2026-06-26 17:20:11",
+      "totalAmount": 52.55,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 2
+        },
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00012",
+      "createTime": "2026-06-27 13:52:28",
+      "totalAmount": 21.69,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00100",
+      "createTime": "2026-07-01 08:30:12",
+      "totalAmount": 69.89,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "猪柳蛋麦满分",
+          "quantity": 1
+        },
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        },
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00027",
+      "createTime": "2026-07-04 06:38:06",
+      "totalAmount": 62.11,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "猪柳蛋麦满分",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00065",
+      "createTime": "2026-07-05 12:26:51",
+      "totalAmount": 60.78,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店2店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "玉米杯",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00004",
+      "createTime": "2026-07-05 14:50:52",
+      "totalAmount": 42.03,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店2店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00058",
+      "createTime": "2026-07-07 20:59:32",
+      "totalAmount": 24.37,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00076",
+      "createTime": "2026-07-10 23:30:30",
+      "totalAmount": 49.37,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "麦辣鸡翅",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00057",
+      "createTime": "2026-07-11 20:58:39",
+      "totalAmount": 40.34,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00121",
+      "createTime": "2026-07-12 12:13:18",
+      "totalAmount": 49.06,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00022",
+      "createTime": "2026-07-13 19:48:54",
+      "totalAmount": 26.36,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00011",
+      "createTime": "2026-07-16 12:43:32",
+      "totalAmount": 14.02,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00042",
+      "createTime": "2026-07-17 19:21:02",
+      "totalAmount": 30.16,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店2店)",
+      "items": [
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 2
+        },
+        {
+          "name": "麦辣鸡翅",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00082",
+      "createTime": "2026-07-20 16:38:36",
+      "totalAmount": 26.88,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00015",
+      "createTime": "2026-08-03 22:06:39",
+      "totalAmount": 25.24,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        },
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00092",
+      "createTime": "2026-08-06 17:00:12",
+      "totalAmount": 46.36,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 2
+        },
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00045",
+      "createTime": "2026-08-14 12:31:27",
+      "totalAmount": 43.68,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00023",
+      "createTime": "2026-08-18 21:14:13",
+      "totalAmount": 25.57,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00118",
+      "createTime": "2026-08-21 07:59:11",
+      "totalAmount": 40.21,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "巨无霸",
+          "quantity": 2
+        },
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00059",
+      "createTime": "2026-08-24 20:53:04",
+      "totalAmount": 85.6,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        },
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00010",
+      "createTime": "2026-08-25 09:42:51",
+      "totalAmount": 86.27,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店2店)",
+      "items": [
+        {
+          "name": "香芋派",
+          "quantity": 1
+        },
+        {
+          "name": "麦香鱼",
+          "quantity": 1
+        },
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        },
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00108",
+      "createTime": "2026-08-25 19:37:02",
+      "totalAmount": 25.96,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "猪柳蛋麦满分",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00106",
+      "createTime": "2026-08-29 20:24:05",
+      "totalAmount": 61.13,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        },
+        {
+          "name": "薯条(中)",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00114",
+      "createTime": "2026-09-05 22:51:17",
+      "totalAmount": 82.19,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        },
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00031",
+      "createTime": "2026-09-06 22:36:13",
+      "totalAmount": 31.79,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店2店)",
+      "items": [
+        {
+          "name": "猪柳蛋麦满分",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00117",
+      "createTime": "2026-09-07 21:22:01",
+      "totalAmount": 82.5,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店2店)",
+      "items": [
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00080",
+      "createTime": "2026-09-15 20:16:01",
+      "totalAmount": 73.62,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "猪柳蛋麦满分",
+          "quantity": 1
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00052",
+      "createTime": "2026-09-16 23:10:35",
+      "totalAmount": 18.68,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "拿铁",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00008",
+      "createTime": "2026-09-22 13:56:53",
+      "totalAmount": 48.79,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00041",
+      "createTime": "2026-09-22 21:05:15",
+      "totalAmount": 61.31,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        },
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00084",
+      "createTime": "2026-09-24 13:15:59",
+      "totalAmount": 45.93,
+      "orderType": "到店",
+      "storeName": "麦当劳(示例门店1店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00030",
+      "createTime": "2026-09-26 22:12:08",
+      "totalAmount": 61.46,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        },
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00006",
+      "createTime": "2026-09-29 20:15:23",
+      "totalAmount": 32.23,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店3店)",
+      "items": [
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00009",
+      "createTime": "2026-09-29 23:07:57",
+      "totalAmount": 40.4,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        },
+        {
+          "name": "巨无霸",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00003",
+      "createTime": "2026-10-01 19:54:35",
+      "totalAmount": 61.99,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店6店)",
+      "items": [
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00073",
+      "createTime": "2026-10-03 22:37:18",
+      "totalAmount": 65.16,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 2
+        },
+        {
+          "name": "麦辣鸡腿汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00071",
+      "createTime": "2026-10-05 11:45:26",
+      "totalAmount": 23.99,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00112",
+      "createTime": "2026-10-06 20:06:08",
+      "totalAmount": 15.18,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "可口可乐(中)",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00109",
+      "createTime": "2026-10-06 22:31:01",
+      "totalAmount": 89.7,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店4店)",
+      "items": [
+        {
+          "name": "麦乐鸡",
+          "quantity": 1
+        },
+        {
+          "name": "奥利奥麦旋风",
+          "quantity": 1
+        },
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00089",
+      "createTime": "2026-10-07 18:41:25",
+      "totalAmount": 63.15,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店2店)",
+      "items": [
+        {
+          "name": "薯条(中)",
+          "quantity": 1
+        },
+        {
+          "name": "巨无霸",
+          "quantity": 2
+        },
+        {
+          "name": "可口可乐(中)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "DEMO00039",
+      "createTime": "2026-10-07 22:28:33",
+      "totalAmount": 38.41,
+      "orderType": "外送",
+      "storeName": "麦当劳(示例门店5店)",
+      "items": [
+        {
+          "name": "双层吉士汉堡",
+          "quantity": 1
+        },
+        {
+          "name": "板烧鸡腿堡",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "orderDetails": [],
+  "nutrition": [
+    {
+      "name": "板烧鸡腿堡",
+      "energy": 430,
+      "protein": 25.0,
+      "fat": 18.0,
+      "carbohydrate": 41.0,
+      "sodium": 900
+    },
+    {
+      "name": "巨无霸",
+      "energy": 510,
+      "protein": 27.0,
+      "fat": 25.0,
+      "carbohydrate": 42.0,
+      "sodium": 950
+    },
+    {
+      "name": "麦辣鸡腿堡",
+      "energy": 470,
+      "protein": 23.0,
+      "fat": 21.0,
+      "carbohydrate": 45.0,
+      "sodium": 1020
+    },
+    {
+      "name": "双层吉士汉堡",
+      "energy": 450,
+      "protein": 25.0,
+      "fat": 24.0,
+      "carbohydrate": 33.0,
+      "sodium": 1050
+    },
+    {
+      "name": "薯条(中)",
+      "energy": 340,
+      "protein": 4.0,
+      "fat": 16.0,
+      "carbohydrate": 44.0,
+      "sodium": 230
+    },
+    {
+      "name": "可口可乐(中)",
+      "energy": 150,
+      "protein": 0.0,
+      "fat": 0.0,
+      "carbohydrate": 38.0,
+      "sodium": 12
+    },
+    {
+      "name": "麦乐鸡",
+      "energy": 250,
+      "protein": 15.0,
+      "fat": 13.0,
+      "carbohydrate": 18.0,
+      "sodium": 490
+    },
+    {
+      "name": "麦辣鸡翅",
+      "energy": 230,
+      "protein": 14.0,
+      "fat": 15.0,
+      "carbohydrate": 10.0,
+      "sodium": 560
+    },
+    {
+      "name": "奥利奥麦旋风",
+      "energy": 340,
+      "protein": 6.0,
+      "fat": 12.0,
+      "carbohydrate": 51.0,
+      "sodium": 160
+    },
+    {
+      "name": "猪柳蛋麦满分",
+      "energy": 380,
+      "protein": 19.0,
+      "fat": 19.0,
+      "carbohydrate": 31.0,
+      "sodium": 780
+    },
+    {
+      "name": "麦香鱼",
+      "energy": 340,
+      "protein": 15.0,
+      "fat": 16.0,
+      "carbohydrate": 34.0,
+      "sodium": 620
+    },
+    {
+      "name": "玉米杯",
+      "energy": 90,
+      "protein": 3.0,
+      "fat": 1.0,
+      "carbohydrate": 19.0,
+      "sodium": 5
+    },
+    {
+      "name": "香芋派",
+      "energy": 230,
+      "protein": 3.0,
+      "fat": 11.0,
+      "carbohydrate": 29.0,
+      "sodium": 190
+    },
+    {
+      "name": "拿铁",
+      "energy": 130,
+      "protein": 7.0,
+      "fat": 6.0,
+      "carbohydrate": 11.0,
+      "sodium": 90
+    }
+  ],
+  "account": {
+    "points": 3240,
+    "availablePoints": 3240,
+    "expiringPoints": 1180,
+    "totalPoints": 12800
+  },
+  "availableCoupons": [
+    {
+      "couponId": "C001",
+      "name": "满 30 减 8"
+    },
+    {
+      "couponId": "C002",
+      "name": "巨无霸第二份半价"
+    },
+    {
+      "couponId": "C003",
+      "name": "麦乐送免配送费"
+    },
+    {
+      "couponId": "C004",
+      "name": "麦乐鸡买一送一"
+    },
+    {
+      "couponId": "C005",
+      "name": "早餐满 15 减 5"
+    },
+    {
+      "couponId": "C006",
+      "name": "甜品第二份半价"
+    }
+  ],
+  "myCoupons": [
+    {
+      "couponId": "M001",
+      "name": "薯条免费券"
+    },
+    {
+      "couponId": "M002",
+      "name": "可乐升杯券"
+    }
+  ],
+  "mallOrders": [],
+  "campaign": {
+    "data": [
+      {
+        "name": "麦麦农场春日季"
+      },
+      {
+        "name": "超级午餐周"
+      },
+      {
+        "name": "麦乐送免配送费日"
+      },
+      {
+        "name": "甜筒回归限定"
+      },
+      {
+        "name": "麦麦夜市烧烤季"
+      }
+    ]
+  },
+  "_meta": {
+    "note": "本数据完全虚构，仅用于 maimen-wrapped 的演示与测试，不含任何真实个人信息。",
+    "generatedAt": "2026-10-09 18:07:52",
+    "generator": "examples/make_sample_data.py"
+  }
+}
