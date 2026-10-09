@@ -98,6 +98,26 @@ cp .env.example .env && 编辑 .env 填入 Token
 python -m maimen_wrapped --token 你的Token
 ```
 
+若你希望在 **WorkBuddy / Cursor / Cherry Studio / TRAE** 等 MCP Client 中直接挂载麦当劳 MCP，
+可直接使用仓库根目录的 [`mcp-config.example.json`](mcp-config.example.json)：
+
+```json
+{
+  "mcpServers": {
+    "mcd-mcp": {
+      "type": "streamablehttp",
+      "url": "https://mcp.mcd.cn",
+      "headers": {
+        "Authorization": "Bearer ${MCD_MCP_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+> ⚠️ 该文件仅使用环境变量占位符 `${MCD_MCP_TOKEN}`，**不含任何真实凭据**，可安全提交。
+> 接入 Client 前请先设置环境变量 `MCD_MCP_TOKEN`。
+
 ### 4. 生成你的麦门画像
 
 ```bash
