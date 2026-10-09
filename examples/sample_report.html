@@ -24,6 +24,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.34);transition:width .3s}
 .dot.on{width:18px;border-radius:3px;background:#FFF8EC}
 .panel{position:relative;z-index:2;background:rgba(255,248,236,.14);border-radius:16px;padding:16px 18px;backdrop-filter:blur(2px)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px solid rgba(255,248,236,.16);font-size:14.5px;line-height:1.45}
+.row:last-child{border-bottom:none}
+.row span{opacity:.78;flex:0 0 auto}
+.row b{font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
 .grid2{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .grid3{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .stat{background:rgba(255,248,236,.14);border-radius:14px;padding:14px 12px;text-align:center}
@@ -62,20 +66,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="mute" id="mute" title="静音 / 取消静音">♪</div>
 <div class="deck" id="deck">
 <section class="card" style="background:#C8102E;color:#FFF8EC">
-<div class="eyebrow anim">2026 · 我的年度报告</div>
+<div class="eyebrow anim">MCP 可获取的最近订单</div>
 <div class="headline anim">我的<br>麦门画像</div>
-<div class="subhead anim">这一年，麦门见证了你<br>2026.01.08 — 2026.10.07（273 天）</div>
+<div class="subhead anim">这 273 天里，麦门见证了你<br>2026.01.08 — 2026.10.07（273 天）</div>
 <div class="spacer"></div>
 <div id="startBtn" class="start anim">开启你的麦门之旅 <span style="font-size:19px">♪</span></div>
 <div class="hint anim">点击后自动播放原创轻快 BGM，上滑逐张翻阅 · 每张都可截图分享</div>
-<div class="footer"><div class="caption">1 / 10</div><div class="dots"><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
+<div class="footer"><div class="caption">1 / 11</div><div class="dots"><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
 </section>
 <section class="card" style="background:#B00E22;color:#FFF8EC">
 <div class="eyebrow anim">你一共下了</div>
 <div class="big anim"><span data-count="127">0</span><span class="unit">单</span></div>
 <div class="subhead anim">127 单，平均每 2.1 天一餐，麦门日常已上线</div>
 <div class="spacer"></div>
-<div class="footer"><div class="caption">2 / 10</div><div class="dots"><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
+<div class="footer"><div class="caption">2 / 11</div><div class="dots"><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
 </section>
 <section class="card" style="background:#E8590C;color:#FFF8EC">
 <div class="eyebrow anim">在麦门的花销</div>
@@ -83,14 +87,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="subhead anim">平均每单 ¥44.8</div>
 <div class="spacer"></div>
 <div class="panel anim" style="position:relative;z-index:2">这些钱约等于 315 杯奶茶</div>
-<div class="footer"><div class="caption">3 / 10</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
+<div class="footer"><div class="caption">3 / 11</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
 </section>
 <section class="card" style="background:#F77F00;color:#FFF8EC">
 <div class="eyebrow anim">本命餐品 TOP 5</div>
 <div class="headline anim" style="font-size:32px">板烧鸡腿堡<br>见了你 53 次</div>
 <div class="bar anim" style="margin-top:22px"><div class="bar-row anim"><div class="bar-top"><span class="n">1 板烧鸡腿堡</span><span class="c">53</span></div><div class="track"><div class="fill" data-w="100"></div></div></div><div class="bar-row anim"><div class="bar-top"><span class="n">2 可口可乐(中)</span><span class="c">46</span></div><div class="track"><div class="fill alt" data-w="87"></div></div></div><div class="bar-row anim"><div class="bar-top"><span class="n">3 巨无霸</span><span class="c">30</span></div><div class="track"><div class="fill alt" data-w="57"></div></div></div><div class="bar-row anim"><div class="bar-top"><span class="n">4 麦辣鸡腿汉堡</span><span class="c">27</span></div><div class="track"><div class="fill alt" data-w="51"></div></div></div><div class="bar-row anim"><div class="bar-top"><span class="n">5 薯条(中)</span><span class="c">24</span></div><div class="track"><div class="fill alt" data-w="45"></div></div></div></div>
 <div class="spacer"></div>
-<div class="footer"><div class="caption">4 / 10</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
+<div class="footer"><div class="caption">4 / 11</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
 </section>
 <section class="card" style="background:#7A0E1D;color:#FFF8EC">
 <div class="eyebrow anim">你的干饭时钟</div>
@@ -98,7 +102,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="chart anim"><div class="col"><div class="cb" data-h="18"></div><div class="cl">早餐</div></div><div class="col"><div class="cb" data-h="49"></div><div class="cl">午餐</div></div><div class="col"><div class="cb" data-h="22"></div><div class="cl">下午茶</div></div><div class="col"><div class="cb" data-h="93"></div><div class="cl">晚餐</div></div><div class="col"><div class="cb hot" data-h="100"></div><div class="cl">夜宵</div></div></div>
 <div class="subhead anim">35% 的订单发生在晚上 9 点以后</div>
 <div class="spacer"></div>
-<div class="footer"><div class="caption">5 / 10</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
+<div class="footer"><div class="caption">5 / 11</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
 </section>
 <section class="card" style="background:#D94F04;color:#FFF8EC">
 <div class="eyebrow anim">逐月出勤记录</div>
@@ -106,7 +110,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="chart anim"><div class="col"><div class="cb" data-h="53"></div><div class="cl">01</div></div><div class="col"><div class="cb hot" data-h="100"></div><div class="cl">02</div></div><div class="col"><div class="cb" data-h="68"></div><div class="cl">03</div></div><div class="col"><div class="cb" data-h="95"></div><div class="cl">04</div></div><div class="col"><div class="cb" data-h="74"></div><div class="cl">05</div></div><div class="col"><div class="cb" data-h="74"></div><div class="cl">06</div></div><div class="col"><div class="cb" data-h="63"></div><div class="cl">07</div></div><div class="col"><div class="cb" data-h="47"></div><div class="cl">08</div></div><div class="col"><div class="cb" data-h="58"></div><div class="cl">09</div></div><div class="col"><div class="cb" data-h="37"></div><div class="cl">10</div></div></div>
 <div class="subhead anim">那个月你下了 19 单</div>
 <div class="spacer"></div>
-<div class="footer"><div class="caption">6 / 10</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
+<div class="footer"><div class="caption">6 / 11</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
 </section>
 <section class="card" style="background:#A31621;color:#FFF8EC">
 <div class="eyebrow anim">累计热量估算</div>
@@ -115,15 +119,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="spacer"></div>
 <div class="subhead anim">按 60kg 体重估算。好消息：快乐不计入热量</div>
 
-<div class="footer"><div class="caption">7 / 10</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
+<div class="footer"><div class="caption">7 / 11</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
 </section>
 <section class="card" style="background:#E85D04;color:#FFF8EC">
 <div class="eyebrow anim">你的省钱武器库</div>
 <div class="headline anim" style="font-size:30px">还有羊毛可以薅</div>
-<div class="grid3 anim" style="margin-top:20px"><div class="stat"><div class="v">6</div><div class="k">可领券</div></div><div class="stat"><div class="v">2</div><div class="k">已有券</div></div><div class="stat"><div class="v">3240</div><div class="k">可用积分</div></div></div>
+<div class="grid3 anim" style="margin-top:20px"><div class="stat"><div class="v">6</div><div class="k">可领券</div></div><div class="stat"><div class="v">2</div><div class="k">已有券</div></div><div class="stat"><div class="v">12800</div><div class="k">累计积分</div></div></div>
 <div class="spacer"></div>
 <div class="subhead anim">1180 积分即将过期，快去兑换</div>
-<div class="footer"><div class="caption">8 / 10</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div></div>
+<div class="footer"><div class="caption">8 / 11</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
 </section>
 <section class="card" style="background:#6B0F1A;color:#FFF8EC">
 <div class="eyebrow anim">麦麦活动回顾</div>
@@ -131,17 +135,25 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="anim" style="margin-top:20px"><span class="pill">麦麦农场春日季</span><span class="pill">超级午餐周</span><span class="pill">麦乐送免配送费日</span><span class="pill">甜筒回归限定</span><span class="pill">麦麦夜市烧烤季</span></div>
 <div class="spacer"></div>
 <div class="subhead anim">下次记得早点上车</div>
-<div class="footer"><div class="caption">9 / 10</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span></div></div>
+<div class="footer"><div class="caption">9 / 11</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div></div>
 </section>
 <section class="card" style="background:#8C0E20;color:#FFF8EC">
-<div class="eyebrow anim">你的 2026 麦门称号</div>
+<div class="eyebrow anim">你的麦门称号</div>
 <div class="badge anim"><span>深夜麦乐送战士</span></div>
 <div class="subhead anim" style="text-align:center;margin-top:18px">你有 45 单发生在晚上 9 点以后</div>
-<div class="grid2 anim" style="margin-top:22px"><div class="stat"><div class="v">127</div><div class="k">总单数</div></div><div class="stat"><div class="v">¥5.7k</div><div class="k">总花费</div></div><div class="stat"><div class="v">夜宵</div><div class="k">最常时段</div></div><div class="stat"><div class="v">外送</div><div class="k">主要方式</div></div></div>
+<div class="grid2 anim" style="margin-top:22px"><div class="stat"><div class="v">127</div><div class="k">总单数</div></div><div class="stat"><div class="v">¥5.7k</div><div class="k">总花费</div></div><div class="stat"><div class="v">夜宵</div><div class="k">最常时段</div></div><div class="stat"><div class="v">到店</div><div class="k">主要方式</div></div></div>
 <div class="spacer"></div>
 <div class="repo anim">生成你的麦门画像 · <b>github.com/your-id/maimen-wrapped</b></div>
 <div class="warn anim" style="text-align:center">本报告由开源项目 maimen-wrapped 生成，非麦当劳官方产品 · 2026-10-09 18:30:00</div>
-<div class="footer"><div class="caption">10 / 10</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span></div></div>
+<div class="footer"><div class="caption">10 / 11</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span></div></div>
+</section>
+<section class="card" style="background:#C8102E;color:#FFF8EC">
+<div class="eyebrow anim">关于这份报告</div>
+<div class="headline anim" style="font-size:30px">数据边界<br>先说清楚</div>
+<div class="panel anim" style="margin-top:20px;text-align:left"><div class="row"><span>样本订单数</span><b>127 单</b></div><div class="row"><span>覆盖区间</span><b>2026.01.08 — 2026.10.07（273 天）</b></div><div class="row"><span>数据来源</span><b>麦当劳中国 MCP Server · order-list</b></div></div>
+<div class="spacer"></div>
+<div class="subhead anim" style="font-size:14px;line-height:1.6">麦当劳 MCP 的 order-list 未提供分页参数，<br>实测仅返回最近 10 笔历史订单 —— 这是平台约束。<br>因此本报告呈现的是「可获取的真实切片」，<br>而非完整年度账单。</div>
+<div class="footer"><div class="caption">11 / 11</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span></div></div>
 </section>
 </div>
 <script>

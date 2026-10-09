@@ -97,9 +97,24 @@ class CNutritionTable:
         """
         从 MCP list-nutrition-foods 返回数据加载营养表。
 
+        兼容两种真实返回形态：
+        ① 标准 JSON 数组（字典列表）；
+        ② 紧凑表文本，形如 ``[160]{productName,energyKj,...}:`` 后接缩进 CSV 行。
+
         @param objData  MCP 返回数据
         @return         加载条数
         """
+        #! 形态②：紧凑表文本（list-nutrition-foods 实测返回）
+        if isinstance(objData, str):
+            self._load_compact_text(objData)
+            self._load_aliases()
+            return len(self.m_listAll)
+        if isinstance(objData, dict) and isinstance(objData.get("data"), str):
+            self._load_compact_text(objData["data"])
+            self._load_aliases()
+            return len(self.m_listAll)
+
+        #! 形态①：标准结构
         listItems = _extract_list(objData)
         for objItem in listItems:
             if not isinstance(objItem, dict):
@@ -110,6 +125,58 @@ class CNutritionTable:
                 self.m_dictByNorm[normalize_name(objNutr.strName)] = objNutr
         self._load_aliases()
         return len(self.m_listAll)
+
+    def _load_compact_text(self, strText: str) -> None:
+        """
+        解析紧凑表文本格式。
+
+        格式样例::
+
+            [160]{productName,nutritionDescription,energyKj,energyKcal,...}:
+              猪柳麦满分,null,1288,308,16,16,24,781,213
+              中薯条,null,1210,289,4,12,38,165,18
+
+        @param strText  紧凑表文本
+        """
+        if not strText:
+            return
+
+        listLines = strText.splitlines()
+        if not listLines:
+            return
+
+        #! 首行含表头：{field1,field2,...}
+        listFields: list[str] = []
+        nDataStart = 0
+        match = re.search(r"\{([^}]*)\}", listLines[0])
+        if match:
+            listFields = [strItem.strip() for strItem in match.group(1).split(",") if strItem.strip()]
+            nDataStart = 1
+        if not listFields:
+            #! 无表头时按已知列序回退
+            listFields = [
+                "productName", "nutritionDescription", "energyKj", "energyKcal",
+                "protein", "fat", "carbohydrate", "sodium", "calcium",
+            ]
+            nDataStart = 0
+
+        for strLine in listLines[nDataStart:]:
+            strLine = strLine.strip()
+            if not strLine:
+                continue
+            listValues = [strItem.strip() for strItem in strLine.split(",")]
+            if len(listValues) < 2:
+                continue
+            dictRow = dict(zip(listFields, listValues))
+            objNutr = _parse_compact_row(dictRow)
+            if objNutr is None or not objNutr.strName:
+                continue
+            #! 同名去重：紧凑表存在重复行（如小杯玉米杯），保留首条
+            strNorm = normalize_name(objNutr.strName)
+            if strNorm in self.m_dictByNorm:
+                continue
+            self.m_listAll.append(objNutr)
+            self.m_dictByNorm[strNorm] = objNutr
 
     def load_from_file(self, strPath: str) -> int:
         """
@@ -252,6 +319,41 @@ class CNutritionTable:
                     }
         except (OSError, json.JSONDecodeError):
             self.m_dictAliases = {}
+
+
+def _parse_compact_row(dictRow: dict[str, str]) -> SNutrition | None:
+    """
+    解析紧凑表的一行数据。
+
+    紧凑表同时提供 energyKj 与 energyKcal，优先取 energyKcal，避免单位换算误差。
+
+    @param dictRow  字段名到字符串值的映射
+    @return         营养数据；解析失败返回 None
+    """
+    strName = (dictRow.get("productName") or "").strip()
+    if not strName:
+        return None
+
+    objNutr = SNutrition(strName=strName)
+    objNutr.dProtein = _parse_number(dictRow.get("protein"))
+    objNutr.dFat = _parse_number(dictRow.get("fat"))
+    objNutr.dCarbohydrate = _parse_number(dictRow.get("carbohydrate"))
+    objNutr.dSodium = _parse_number(dictRow.get("sodium"))
+
+    #! 官方表已给出 kcal，直接使用；缺失时再由 kJ 换算
+    objKcal = dictRow.get("energyKcal")
+    objKj = dictRow.get("energyKj")
+    if objKcal is not None and str(objKcal).strip().lower() not in ("", "null", "none"):
+        objNutr.dEnergy = _parse_number(objKcal)
+        objNutr.strRawUnit = "kcal"
+    elif objKj is not None and str(objKj).strip().lower() not in ("", "null", "none"):
+        objNutr.dEnergy = _parse_number(objKj) / 4.184
+        objNutr.strRawUnit = "kJ"
+    else:
+        objNutr.dEnergy = 0.0
+        objNutr.strRawUnit = ""
+
+    return objNutr
 
 
 def normalize_name(strName: str) -> str:

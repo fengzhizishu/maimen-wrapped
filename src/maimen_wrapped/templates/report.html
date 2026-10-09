@@ -24,6 +24,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.34);transition:width .3s}
 .dot.on{width:18px;border-radius:3px;background:#FFF8EC}
 .panel{position:relative;z-index:2;background:rgba(255,248,236,.14);border-radius:16px;padding:16px 18px;backdrop-filter:blur(2px)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px solid rgba(255,248,236,.16);font-size:14.5px;line-height:1.45}
+.row:last-child{border-bottom:none}
+.row span{opacity:.78;flex:0 0 auto}
+.row b{font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
 .grid2{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .grid3{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .stat{background:rgba(255,248,236,.14);border-radius:14px;padding:14px 12px;text-align:center}

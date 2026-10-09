@@ -220,13 +220,17 @@ def order_id_candidates() -> tuple[str, ...]:
 
 
 async def _fetch_account_tools(client: McdMcpClient, listTools: list[str], _log) -> dict[str, Any]:
-    """并发拉取积分、券相关工具。"""
+    """
+    并发拉取积分、券相关工具。
+
+    注：mall-order-list 服务端 JSON Schema 存在缺陷（`type` 字段被声明为数组），
+    任何调用都会返回 schema 校验错误，因此不纳入本项目调用范围。
+    """
     dictOut: dict[str, Any] = {}
     listTargets = [
         ("account", "query-my-account"),
         ("availableCoupons", "available-coupons"),
         ("myCoupons", "query-my-coupons"),
-        ("mallOrders", "mall-order-list"),
     ]
 
     async def _one(strKey: str, strTool: str) -> tuple[str, Any]:
@@ -235,7 +239,9 @@ async def _fetch_account_tools(client: McdMcpClient, listTools: list[str], _log)
         try:
             return strKey, await client.call_tool(strTool, {})
         except Exception as exc:
-            _log(f"      {strTool} 失败（忽略）：{exc}")
+            #! 截断异常文本，避免服务端 schema 报错刷屏
+            strMsg = str(exc).split("\n")[0][:120]
+            _log(f"      {strTool} 失败（忽略）：{strMsg}")
             return strKey, None
 
     listPairs = await asyncio.gather(*[_one(strKey, strTool) for strKey, strTool in listTargets])

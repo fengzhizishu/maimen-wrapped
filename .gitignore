@@ -22,3 +22,6 @@ build/
 .idea/
 .DS_Store
 Thumbs.db
+
+# ---- 本地工具产物 ----
+.workbuddy/

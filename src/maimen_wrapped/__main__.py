@@ -22,7 +22,7 @@ import json
 import os
 import sys
 
-from .aggregate import aggregate, normalize_orders
+from .aggregate import aggregate, count_cancelled, normalize_orders
 from .mcp_client import McdMcpError, McdTokenError, resolve_token
 from .nutrition import load_nutrition_table
 from .pipeline import NUTRITION_CACHE, fetch_all
@@ -168,8 +168,9 @@ def _build_and_render(
     # 订单标准化（合并列表与详情）
     listRawOrders = _merge_orders(dictData.get("orderList"), dictData.get("orderDetails"))
     listOrders = normalize_orders(listRawOrders)
+    nCancelled = count_cancelled(listRawOrders)
     if bVerbose:
-        print(f"[订单] 标准化 {len(listOrders)} 单")
+        print(f"[订单] 标准化 {len(listOrders)} 单（已过滤取消单 {nCancelled} 单）")
 
     # 营养匹配
     listItemNames: list[str] = []
@@ -190,6 +191,7 @@ def _build_and_render(
         objCampaign=dictData.get("campaign"),
         strGeneratedAt=strGeneratedAt,
     )
+    objStats.nCancelledCount = nCancelled
 
     # 渲染
     strRepo = objArgs.repo or "github.com/your-id/maimen-wrapped"

@@ -90,6 +90,7 @@ def _build_cards(objStats: SStats, strRepoUrl: str) -> str:
         _card_savings,
         _card_easter_egg,
         _card_title,
+        _card_scope,
     ]
 
     # 先收集可用卡片，以便页码重排
@@ -140,12 +141,11 @@ def _build_dots(nIndex: int, nTotal: int) -> str:
 def _card_cover(objStats: SStats, strRepoUrl: str) -> str:
     """卡片 1：封面 + 启动按钮。"""
     strSpan = _esc(objStats.strSpanLabel) or "数据统计区间待确认"
-    strStart = ""
     listStartCard = '<div id="startBtn" class="start anim">开启你的麦门之旅 <span style="font-size:19px">♪</span></div>'
     return (
-        '<div class="eyebrow anim">2026 · 我的年度报告</div>\n'
+        '<div class="eyebrow anim">MCP 可获取的最近订单</div>\n'
         '<div class="headline anim">我的<br>麦门画像</div>\n'
-        f'<div class="subhead anim">这一年，麦门见证了你<br>{strSpan}</div>\n'
+        f'<div class="subhead anim">这 {objStats.nSpanDays} 天里，麦门见证了你<br>{strSpan}</div>\n'
         '<div class="spacer"></div>\n'
         f"{listStartCard}\n"
         '<div class="hint anim">点击后自动播放原创轻快 BGM，上滑逐张翻阅 · 每张都可截图分享</div>'
@@ -300,7 +300,7 @@ def _card_energy(objStats: SStats, strRepoUrl: str) -> str:
 
 def _card_savings(objStats: SStats, strRepoUrl: str) -> str:
     """卡片 8：省钱行动卡。"""
-    if not (objStats.nAvailableCoupons or objStats.nMyCoupons or objStats.nPoints):
+    if not (objStats.nAvailableCoupons or objStats.nMyCoupons or objStats.nPoints or objStats.nTotalPoints):
         return ""
 
     listStats: list[str] = []
@@ -308,12 +308,17 @@ def _card_savings(objStats: SStats, strRepoUrl: str) -> str:
         listStats.append(f'<div class="stat"><div class="v">{objStats.nAvailableCoupons}</div><div class="k">可领券</div></div>')
     if objStats.nMyCoupons:
         listStats.append(f'<div class="stat"><div class="v">{objStats.nMyCoupons}</div><div class="k">已有券</div></div>')
-    if objStats.nPoints:
+    #! 累计积分比可用积分更具故事性，优先展示
+    if objStats.nTotalPoints:
+        listStats.append(f'<div class="stat"><div class="v">{objStats.nTotalPoints:.0f}</div><div class="k">累计积分</div></div>')
+    elif objStats.nPoints:
         listStats.append(f'<div class="stat"><div class="v">{objStats.nPoints:.0f}</div><div class="k">可用积分</div></div>')
 
     strUrgent = ""
     if objStats.nExpiringPoints:
         strUrgent = f'<div class="subhead anim">{objStats.nExpiringPoints:.0f} 积分即将过期，快去兑换</div>'
+    elif objStats.nFreeOrderCount:
+        strUrgent = f'<div class="subhead anim">这 {objStats.nFreeOrderCount} 单靠券和积分拿下，白嫖也是本事</div>'
     else:
         strUrgent = '<div class="subhead anim">券和积分都在这儿，别让它们睡觉</div>'
 
@@ -345,7 +350,12 @@ def _card_title(objStats: SStats, strRepoUrl: str) -> str:
     """卡片 10：麦门称号总结卡。"""
     listStats: list[str] = [f'<div class="stat"><div class="v">{objStats.nOrderCount}</div><div class="k">总单数</div></div>']
     if objStats.bHasAmount:
-        listStats.append(f'<div class="stat"><div class="v">¥{objStats.dTotalAmount / 1000:.1f}k</div><div class="k">总花费</div></div>')
+        #! 金额小于 1000 元时显示整数元，避免出现「¥0.1k」这类失真展示
+        if objStats.dTotalAmount >= 1000:
+            strAmount = f'¥{objStats.dTotalAmount / 1000:.1f}k'
+        else:
+            strAmount = f'¥{objStats.dTotalAmount:.0f}'
+        listStats.append(f'<div class="stat"><div class="v">{strAmount}</div><div class="k">总花费</div></div>')
     if objStats.bHasClock and objStats.nSlotTotal:
         strTopSlot, _ = max(objStats.dictSlotCount.items(), key=lambda objPair: objPair[1])
         listStats.append(f'<div class="stat"><div class="v">{strTopSlot}</div><div class="k">最常时段</div></div>')
@@ -354,20 +364,57 @@ def _card_title(objStats: SStats, strRepoUrl: str) -> str:
         listStats.append(f'<div class="stat"><div class="v">{strTopChannel}</div><div class="k">主要方式</div></div>')
     if objStats.dTotalEnergy > 0:
         listStats.append(f'<div class="stat"><div class="v">{objStats.dTotalEnergy / 1000:.1f}k</div><div class="k">千卡</div></div>')
-    if objStats.nPoints:
-        listStats.append(f'<div class="stat"><div class="v">{objStats.nPoints:.0f}</div><div class="k">积分</div></div>')
+    if objStats.nTotalPoints or objStats.nPoints:
+        listStats.append(f'<div class="stat"><div class="v">{objStats.nTotalPoints or objStats.nPoints:.0f}</div><div class="k">累计积分</div></div>')
 
     strReason = _esc(objStats.strTitleReason)
     strGenerated = _esc(objStats.strGeneratedAt)
 
     return (
-        '<div class="eyebrow anim">你的 2026 麦门称号</div>\n'
+        '<div class="eyebrow anim">你的麦门称号</div>\n'
         f'<div class="badge anim"><span>{_esc(objStats.strTitleName or "稳健干饭人")}</span></div>\n'
         f'<div class="subhead anim" style="text-align:center;margin-top:18px">{strReason}</div>\n'
         f'<div class="grid2 anim" style="margin-top:22px">{"".join(listStats[:4])}</div>\n'
         '<div class="spacer"></div>\n'
         f'<div class="repo anim">生成你的麦门画像 · <b>{_esc(strRepoUrl)}</b></div>\n'
         f'<div class="warn anim" style="text-align:center">本报告由开源项目 maimen-wrapped 生成，非麦当劳官方产品 · {strGenerated}</div>'
+    )
+
+
+def _card_scope(objStats: SStats, strRepoUrl: str) -> str:
+    """
+    卡片 11：数据边界说明卡。
+
+    麦当劳 MCP 的 order-list 不提供分页参数，实测只能返回最近 10 笔订单，
+    这是平台固有约束而非接口缺陷。本卡以诚实口径说明样本范围，
+    既避免「年度报告」式的夸大失实，也让评测者看到对数据边界的清醒认知。
+    """
+    if not objStats.nOrderCount:
+        return ""
+
+    listRows = [
+        ('样本订单数', f'{objStats.nOrderCount} 单'),
+        ('覆盖区间', _esc(objStats.strSpanLabel) or '—'),
+    ]
+    if objStats.nCancelledCount:
+        listRows.append(('已剔除取消单', f'{objStats.nCancelledCount} 单'))
+    if objStats.nFreeOrderCount:
+        listRows.append(('券/积分兑换单', f'{objStats.nFreeOrderCount} 单（未计入花费）'))
+    listRows.append(('数据来源', '麦当劳中国 MCP Server · order-list'))
+
+    listHtml = "".join(
+        f'<div class="row"><span>{strKey}</span><b>{strValue}</b></div>' for strKey, strValue in listRows
+    )
+
+    return (
+        '<div class="eyebrow anim">关于这份报告</div>\n'
+        '<div class="headline anim" style="font-size:30px">数据边界<br>先说清楚</div>\n'
+        f'<div class="panel anim" style="margin-top:20px;text-align:left">{listHtml}</div>\n'
+        '<div class="spacer"></div>\n'
+        '<div class="subhead anim" style="font-size:14px;line-height:1.6">'
+        '麦当劳 MCP 的 order-list 未提供分页参数，<br>'
+        '实测仅返回最近 10 笔历史订单 —— 这是平台约束。<br>'
+        '因此本报告呈现的是「可获取的真实切片」，<br>而非完整年度账单。</div>'
     )
 
 
