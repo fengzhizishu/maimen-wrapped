@@ -16,6 +16,31 @@
 
 > 参赛项目 · 麦当劳程序员节创意开发大赛。本项目由参赛者独立开发，**非麦当劳官方产品**。
 
+## 效果预览
+
+> 下列截图由本项目**真实运行输出**（示例数据，全虚构）逐张抓取，非设计稿。
+
+<div align="center">
+
+<img src="docs/screenshots/preview-cards.png" width="100%" alt="麦门画像卡片流预览：封面 / 总单数 / 本命餐品 / 数据边界">
+
+<sub>封面 · 总单数 · 本命餐品 · 数据边界说明（左右滑动查看完整卡片流）</sub>
+
+<br><br>
+
+<img src="docs/screenshots/preview-grid.png" width="72%" alt="全部 11 张卡片总览">
+
+<sub>完整 11 张卡片总览</sub>
+
+</div>
+
+**3 秒看懂**：打开报告 → 上滑逐张翻阅 → 每张都是 9:16 全屏、可直接截图发朋友圈。
+
+```bash
+# 无需任何 Token，一行命令立刻看到上面这些卡片
+python -m maimen_wrapped --from-json examples/sample_data.json --out my_report.html
+```
+
 ## 这是什么
 
 `maimen-wrapped` 读取你自己的麦当劳历史订单，生成一份像 Spotify Wrapped 那样的**故事卡片流**——最多 11 张竖版全屏卡片，上滑逐张翻阅：
@@ -31,7 +56,7 @@
 | 7 | 累计热量换算 |
 | 8 | 省钱武器库（券 + 积分） |
 | 9 | 错过的麦麦活动 |
-| 10 | **专属麦门称号** + 四格数据回顾 |
+| 10 | **专属麦门称号** + 六格数据回顾 |
 | 11 | 数据边界说明（样本量 / 覆盖区间 / 剔除项） |
 
 称号卡会按你的数据发放称号：**麦香鱼信徒**、**深夜麦乐送战士**、**早餐狂魔**、**板烧鸡腿堡信徒**……
@@ -54,16 +79,18 @@
 | **保留零元单** | 券/积分兑换单 `realTotalAmount="0"`，丢弃会损失约 30% 样本。保留但不计入花费 |
 | **过滤取消单** | `orderStatus="订单已取消"` 会虚增单数。过滤但单独计数，在边界卡如实展示 |
 
-## 效果预览
+## 快速开始
 
-打开 [`examples/sample_report.html`](examples/sample_report.html) 可直接查看完整卡片流（使用全虚构示例数据）。
+### 0. 先看效果（30 秒，不需要 Token）
 
 ```bash
-# 无需 Token，一步生成示例报告
+git clone https://github.com/fengzhizishu/maimen-wrapped.git
+cd maimen-wrapped
+pip install -r requirements.txt
 python -m maimen_wrapped --from-json examples/sample_data.json --out my_report.html
 ```
 
-## 快速开始
+用浏览器打开 `my_report.html`，点击封面按钮即可翻阅全部 11 张卡片。
 
 ### 1. 申请麦当劳 MCP Token
 

@@ -18,7 +18,14 @@ import json
 import os
 from typing import Any
 
-from .aggregate import KCAL_PER_BIG_MAC, KCAL_PER_KM_RUN, RUN_SPEED_KMH, SStats
+from .aggregate import (
+    KCAL_PER_BIG_MAC,
+    KCAL_PER_BOWL_RICE,
+    KCAL_PER_KM_RUN,
+    KCAL_PER_MILK_TEA,
+    RUN_SPEED_KMH,
+    SStats,
+)
 
 
 #! 模板路径
@@ -157,11 +164,38 @@ def _card_count(objStats: SStats, strRepoUrl: str) -> str:
     if not objStats.nOrderCount:
         return ""
     strInsight = _esc(objStats.listInsights[0]) if objStats.listInsights else ""
+
+    #! 中部用「订单节奏」面板填充竖版空间：频率 / 跨度 / 时段
+    listRows: list[str] = []
+    if objStats.nOrderCount > 0 and objStats.nSpanDays > 0:
+        dDays = objStats.nSpanDays / objStats.nOrderCount
+        listRows.append(("平均频率", f"约 {dDays:.1f} 天一顿"))
+    if objStats.nSpanDays:
+        listRows.append(("样本跨度", f"{objStats.nSpanDays} 天"))
+    if objStats.bHasClock and objStats.nSlotTotal:
+        strTopSlot, nTopSlot = max(objStats.dictSlotCount.items(), key=lambda objPair: objPair[1])
+        listRows.append(("最常时段", f"{strTopSlot} · {nTopSlot} 单"))
+    if objStats.dictChannelCount:
+        strTopChannel, nTopChannel = max(
+            objStats.dictChannelCount.items(), key=lambda objPair: objPair[1]
+        )
+        listRows.append(("主要方式", f"{strTopChannel} · {nTopChannel} 单"))
+
+    strMiddle = ""
+    if listRows:
+        listHtml = "".join(
+            f'<div class="row"><span>{strKey}</span><b>{_esc(strValue)}</b></div>'
+            for strKey, strValue in listRows
+        )
+        strMiddle = f'<div class="grow"><div class="panel anim">{listHtml}</div></div>\n'
+    else:
+        strMiddle = '<div class="spacer"></div>\n'
+
     return (
         '<div class="eyebrow anim">你一共下了</div>\n'
         f'<div class="big anim"><span data-count="{objStats.nOrderCount}">0</span><span class="unit">单</span></div>\n'
         f'<div class="subhead anim">{strInsight}</div>\n'
-        '<div class="spacer"></div>'
+        f"{strMiddle}"
     )
 
 
@@ -170,12 +204,34 @@ def _card_amount(objStats: SStats, strRepoUrl: str) -> str:
     if not objStats.bHasAmount or objStats.dTotalAmount <= 0:
         return ""
     nCups = int(objStats.dTotalAmount / 18)
+
+    #! 中部用「花销构成」面板填充竖版空间
+    listRows: list[tuple[str, str]] = []
+    if objStats.nOrderCount:
+        listRows.append(("记账订单数", f"{objStats.nOrderCount} 单"))
+    listRows.append(("平均每单", f"¥{objStats.dAmountPerOrder:.1f}"))
+    if objStats.nFreeOrderCount:
+        listRows.append(("券/积分抵扣单", f"{objStats.nFreeOrderCount} 单（¥0）"))
+    if objStats.dTotalEnergy > 0:
+        dPerKcal = objStats.dTotalAmount / objStats.dTotalEnergy
+        listRows.append(("每千卡成本", f"¥{dPerKcal:.2f}"))
+
+    strMiddle = ""
+    if listRows:
+        listHtml = "".join(
+            f'<div class="row"><span>{strKey}</span><b>{_esc(strValue)}</b></div>'
+            for strKey, strValue in listRows
+        )
+        strMiddle = f'<div class="grow"><div class="panel anim">{listHtml}</div></div>\n'
+    else:
+        strMiddle = '<div class="spacer"></div>\n'
+
     return (
         '<div class="eyebrow anim">在麦门的花销</div>\n'
         f'<div class="big anim"><span style="font-size:52px;letter-spacing:0">¥</span>'
         f'<span data-count="{objStats.dTotalAmount:.0f}">0</span></div>\n'
         f'<div class="subhead anim">平均每单 ¥{objStats.dAmountPerOrder:.1f}</div>\n'
-        '<div class="spacer"></div>\n'
+        f"{strMiddle}"
         f'<div class="panel anim" style="position:relative;z-index:2">这些钱约等于 {nCups} 杯奶茶</div>'
     )
 
@@ -187,12 +243,15 @@ def _card_top_items(objStats: SStats, strRepoUrl: str) -> str:
 
     strChampion, nChampCount = objStats.listTopItems[0]
     nMax = max(objStats.listTopItems[0][1], 1)
+    nRows = len(objStats.listTopItems)
     listRows: list[str] = []
     for idx, (strName, nCount) in enumerate(objStats.listTopItems):
         dPct = nCount / nMax * 100
         strCls = "" if idx == 0 else " alt"
+        #! 每档均分剩余高度，避免末位被推到底部造成断层
+        strGrow = " grow1" if nRows > 1 else ""
         listRows.append(
-            '<div class="bar-row anim">'
+            f'<div class="bar-row{strGrow} anim">'
             f'<div class="bar-top"><span class="n">{idx + 1} {_esc(strName)}</span>'
             f'<span class="c">{nCount}</span></div>'
             f'<div class="track"><div class="fill{strCls}" data-w="{dPct:.0f}"></div></div>'
@@ -202,8 +261,7 @@ def _card_top_items(objStats: SStats, strRepoUrl: str) -> str:
     return (
         '<div class="eyebrow anim">本命餐品 TOP 5</div>\n'
         f'<div class="headline anim" style="font-size:32px">{_esc(strChampion)}<br>见了你 {nChampCount} 次</div>\n'
-        f'<div class="bar anim" style="margin-top:22px">{"".join(listRows)}</div>\n'
-        '<div class="spacer"></div>'
+        f'<div class="bar anim grow" style="margin-top:18px">{"".join(listRows)}</div>\n'
     )
 
 
@@ -231,13 +289,14 @@ def _card_clock(objStats: SStats, strRepoUrl: str) -> str:
     if objStats.dictSlotCount.get("夜宵"):
         dRatio = objStats.dictSlotCount["夜宵"] / objStats.nSlotTotal
         listNightLines.append(f'<div class="subhead anim">{dRatio:.0%} 的订单发生在晚上 9 点以后</div>')
+    if not listNightLines:
+        listNightLines.append(f'<div class="subhead anim">最常出没在{strPeak}时段，共 {nPeakCount} 单</div>')
 
     return (
         '<div class="eyebrow anim">你的干饭时钟</div>\n'
         f'<div class="headline anim" style="font-size:30px">{strPeak}是你的主场</div>\n'
-        f'<div class="chart anim">{"".join(listCols)}</div>\n'
+        f'<div class="chart anim fill-h">{"".join(listCols)}</div>\n'
         f'{"".join(listNightLines)}\n'
-        '<div class="spacer"></div>'
     )
 
 
@@ -265,9 +324,8 @@ def _card_months(objStats: SStats, strRepoUrl: str) -> str:
     return (
         '<div class="eyebrow anim">逐月出勤记录</div>\n'
         f'<div class="headline anim" style="font-size:30px">{strPeakMonth.split("-")[-1]} 月是你的麦门之月</div>\n'
-        f'<div class="chart anim">{"".join(listCols)}</div>\n'
+        f'<div class="chart anim fill-h">{"".join(listCols)}</div>\n'
         f'<div class="subhead anim">那个月你下了 {nPeakCount} 单</div>\n'
-        '<div class="spacer"></div>'
     )
 
 
@@ -285,6 +343,17 @@ def _card_energy(objStats: SStats, strRepoUrl: str) -> str:
     if nRatePct < 90:
         strFootnote = f'<div class="warn anim">营养数据匹配率 {nRatePct:.0f}%，实际热量可能更高</div>'
 
+    #! 中部补充可量化对照，填满竖版留白（dTotalEnergy 单位已是千卡）
+    nRice = objStats.dTotalEnergy / KCAL_PER_BOWL_RICE if objStats.dTotalEnergy else 0
+    nMilkTea = objStats.dTotalEnergy / KCAL_PER_MILK_TEA if objStats.dTotalEnergy else 0
+    strMiddle = (
+        '<div class="grow">'
+        f'<div class="grid2 anim">'
+        f'<div class="stat"><div class="v">≈ {nRice:.0f}</div><div class="k">碗米饭的热量</div></div>'
+        f'<div class="stat"><div class="v">≈ {nMilkTea:.0f}</div><div class="k">杯奶茶的热量</div></div>'
+        "</div></div>\n"
+    )
+
     return (
         '<div class="eyebrow anim">累计热量估算</div>\n'
         f'<div class="big anim"><span data-count="{objStats.dTotalEnergy:.0f}">0</span><span class="unit">千卡</span></div>\n'
@@ -292,7 +361,7 @@ def _card_energy(objStats: SStats, strRepoUrl: str) -> str:
         f'<div class="stat"><div class="v">≈ {nBigMac:.0f}</div><div class="k">个巨无霸的热量</div></div>'
         f'<div class="stat"><div class="v">≈ {dRunHours:.0f}</div><div class="k">小时慢跑消耗</div></div>'
         "</div>\n"
-        '<div class="spacer"></div>\n'
+        f"{strMiddle}"
         '<div class="subhead anim">按 60kg 体重估算。好消息：快乐不计入热量</div>\n'
         f"{strFootnote}"
     )
@@ -322,11 +391,47 @@ def _card_savings(objStats: SStats, strRepoUrl: str) -> str:
     else:
         strUrgent = '<div class="subhead anim">券和积分都在这儿，别让它们睡觉</div>'
 
+    #! 补一行「省了多少」的量级提示，让下部不再空荡
+    strExtra = ""
+    if objStats.dFreeOrderValue > 0:
+        strExtra = (
+            f'<div class="warn anim">按同类单品均价估算，'
+            f'券与积分这 {objStats.nFreeOrderCount} 单约为你省下 ¥{objStats.dFreeOrderValue:.0f}</div>'
+        )
+    elif objStats.nTotalPoints:
+        strExtra = (
+            f'<div class="warn anim">累计 {objStats.nTotalPoints:.0f} 积分'
+            f'（其中 {objStats.nExpiringPoints:.0f} 即将到期），记账前先看这里</div>'
+        )
+
+    #! 中部用「省钱账本」面板填充竖版空间
+    listRows: list[tuple[str, str]] = []
+    if objStats.nAvailableCoupons:
+        listRows.append(("当前可领券", f"{objStats.nAvailableCoupons} 张"))
+    if objStats.nMyCoupons:
+        listRows.append(("已持有券", f"{objStats.nMyCoupons} 张"))
+    if objStats.nTotalPoints:
+        listRows.append(("累计积分", f"{objStats.nTotalPoints:.0f} 分"))
+    if objStats.nExpiringPoints:
+        listRows.append(("即将过期", f"{objStats.nExpiringPoints:.0f} 分"))
+    if objStats.nFreeOrderCount and objStats.dFreeOrderValue > 0:
+        listRows.append(("券/积分省下", f"约 ¥{objStats.dFreeOrderValue:.0f}"))
+
+    strMiddle = ""
+    if listRows:
+        listHtml = "".join(
+            f'<div class="row"><span>{strKey}</span><b>{_esc(strValue)}</b></div>'
+            for strKey, strValue in listRows
+        )
+        strMiddle = f'<div class="grow"><div class="panel anim">{listHtml}</div></div>\n'
+    else:
+        strMiddle = '<div class="spacer"></div>\n'
+
     return (
         '<div class="eyebrow anim">你的省钱武器库</div>\n'
         f'<div class="headline anim" style="font-size:30px">还有羊毛可以薅</div>\n'
         f'<div class="grid3 anim" style="margin-top:20px">{"".join(listStats)}</div>\n'
-        '<div class="spacer"></div>\n'
+        f"{strMiddle}"
         f"{strUrgent}"
     )
 
@@ -340,9 +445,8 @@ def _card_easter_egg(objStats: SStats, strRepoUrl: str) -> str:
     return (
         '<div class="eyebrow anim">麦麦活动回顾</div>\n'
         '<div class="headline anim" style="font-size:30px">这些活动<br>你完美错过了</div>\n'
-        f'<div class="anim" style="margin-top:20px">{listPills}</div>\n'
-        '<div class="spacer"></div>\n'
-        '<div class="subhead anim">下次记得早点上车</div>'
+        f'<div class="grow"><div class="anim">{listPills}</div></div>\n'
+        '<div class="subhead anim">下次记得早点上车，券都在活动里</div>\n'
     )
 
 
@@ -370,12 +474,18 @@ def _card_title(objStats: SStats, strRepoUrl: str) -> str:
     strReason = _esc(objStats.strTitleReason)
     strGenerated = _esc(objStats.strGeneratedAt)
 
+    #! 展示全部指标（最多 6 项，2×3 网格），并用 grow 垂直居中填充竖版空间
+    strGrid = (
+        f'<div class="grid2 anim" style="margin-top:22px">{"".join(listStats)}</div>'
+        if listStats
+        else ""
+    )
+
     return (
         '<div class="eyebrow anim">你的麦门称号</div>\n'
         f'<div class="badge anim"><span>{_esc(objStats.strTitleName or "稳健干饭人")}</span></div>\n'
         f'<div class="subhead anim" style="text-align:center;margin-top:18px">{strReason}</div>\n'
-        f'<div class="grid2 anim" style="margin-top:22px">{"".join(listStats[:4])}</div>\n'
-        '<div class="spacer"></div>\n'
+        f'<div class="grow">{strGrid}</div>\n'
         f'<div class="repo anim">生成你的麦门画像 · <b>{_esc(strRepoUrl)}</b></div>\n'
         f'<div class="warn anim" style="text-align:center">本报告由开源项目 maimen-wrapped 生成，非麦当劳官方产品 · {strGenerated}</div>'
     )

@@ -25,3 +25,8 @@ Thumbs.db
 
 # ---- 本地工具产物 ----
 .workbuddy/
+
+# ---- 截图工具的 Edge 临时用户目录 ----
+_edgeprofile/
+*_edgeprofile/
+output/_degshots/

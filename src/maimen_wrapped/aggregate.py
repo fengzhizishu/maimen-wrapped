@@ -34,6 +34,9 @@ KCAL_PER_MILK_TEA = 400.0
 #! 一个巨无霸的参考热量（kcal，来自公开营养信息，仅用于趣味换算）
 KCAL_PER_BIG_MAC = 510.0
 
+#! 一碗米饭的参考热量（kcal，约 150g 熟米饭，仅用于趣味换算）
+KCAL_PER_BOWL_RICE = 116.0
+
 #! 到店/外送识别关键词
 CHANNEL_TAKEOUT = ("到店", "堂食", "自取", "取餐", "dine", "self")
 CHANNEL_DELIVERY = ("外送", "麦乐送", "外卖", "delivery", "express")
