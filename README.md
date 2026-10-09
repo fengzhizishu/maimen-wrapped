@@ -76,7 +76,7 @@ python -m maimen_wrapped --from-json examples/sample_data.json --out my_report.h
 ### 2. 安装
 
 ```bash
-git clone https://github.com/your-id/maimen-wrapped.git
+git clone https://github.com/fengzhizishu/maimen-wrapped.git
 cd maimen-wrapped
 pip install -r requirements.txt
 ```

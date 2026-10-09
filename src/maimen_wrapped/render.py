@@ -25,7 +25,7 @@ from .aggregate import KCAL_PER_BIG_MAC, KCAL_PER_KM_RUN, RUN_SPEED_KMH, SStats
 TEMPLATE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates", "report.html")
 
 #! 仓库地址（传播回流）
-REPO_URL = "github.com/your-id/maimen-wrapped"
+REPO_URL = "github.com/fengzhizishu/maimen-wrapped"
 
 #! 卡片配色方案：(背景, 主文字色)
 CARD_THEMES = [

@@ -194,7 +194,7 @@ def _build_and_render(
     objStats.nCancelledCount = nCancelled
 
     # 渲染
-    strRepo = objArgs.repo or "github.com/your-id/maimen-wrapped"
+    strRepo = objArgs.repo or "github.com/fengzhizishu/maimen-wrapped"
     strOutPath = render(objStats, objArgs.out, strRepoUrl=strRepo)
 
     if bVerbose:
